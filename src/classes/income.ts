@@ -1,4 +1,5 @@
 export class IncomeSource {
+    _id:string;
     name:string;
 }
 export class Income {

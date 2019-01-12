@@ -4,7 +4,7 @@ export class IncomeSource {
 }
 export class Income {
     description:string;
-    date:Date;
+    myDate:Date;
     amount:number;
     category:  IncomeSource;
 }

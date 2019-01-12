@@ -3,8 +3,9 @@
     <input class="form-control simpleinput" formControlName="description" type="text" placeholder="Description">
     <input class="form-control simpleinput" formControlName="amount" type="number" placeholder="Amount">
     <my-date-picker name="mydate" [options]="myDatePickerOptions" formControlName="myDate" placeholder="Select the Day"></my-date-picker>
-    <select class="form-control simpleinput" formControlName="category"></select>
-    <option *ngFor="let x of income" [value]="x">{{x}}</option>
+    <select class="form-control simpleinput" formControlName="category">
+      <option *ngFor="let category of incomeSourcesList" [ngValue]="category">{{category.Name}}</option>
+    </select>
     <button [disabled]="!incomeForm.valid" class="btn btn-danger" type="submit">Click</button>
   </div>
 </form>

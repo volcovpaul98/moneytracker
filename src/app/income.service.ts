@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { FormComponent } from './income/form/form.component';
 import { Observable } from 'rxjs';
-import { IncomeSource } from 'src/classes/income';
+import { IncomeSource} from 'src/classes/income';
 import { map } from 'rxjs/operators';
 
 
@@ -23,10 +23,11 @@ export class IncomeService {
   constructor(http: Http) {
     this.http = http;
   }
-  getIncomes(): Observable<IncomeSource[]> {
+  getIncomeSources(): Observable<IncomeSource[]> {
     var mapOfIncome = map((response: Response) => {
       return response.json();
     })
     return mapOfIncome(this.http.get(this.incomeUrl, { headers: this.headers }));
   }
+  
 }

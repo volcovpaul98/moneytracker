@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+.buttonRout {
+    padding: 15px;
+    background: blue;
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+    margin-right: 15px;
+}

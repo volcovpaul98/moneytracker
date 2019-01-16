@@ -8,12 +8,18 @@ import { EditComponent } from './income/edit/edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MyDatePickerModule } from 'mydatepicker';
 import { HttpModule } from '@angular/http';
+import { Edit2Component } from './expense/edit2/edit2.component';
+import { Form2Component } from './expense/form2/form2.component';
+import { New2Component } from './expense/new2/new2.component';
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
     NewComponent,
-    EditComponent
+    EditComponent,
+    Edit2Component,
+    Form2Component,
+    New2Component
 
   ],
   imports: [

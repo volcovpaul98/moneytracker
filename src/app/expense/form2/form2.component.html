@@ -1,0 +1,11 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="expenseForm">
+  <div class="form-group" style="width: 22%;margin: 0 auto;">
+    <input class="form-control simpleinput" formControlName="description" type="text" placeholder="Description">
+    <input class="form-control simpleinput" formControlName="amount" type="number" placeholder="Amount">
+    <my-date-picker name="mydate" [options]="myDatePickerOptions" formControlName="myDate" placeholder="Select the Day"></my-date-picker>
+    <select class="form-control simpleinput" formControlName="category">
+      <option *ngFor="let category of expenseSourceList" [ngValue]="category">{{category.Name}}</option>
+    </select>
+    <button [disabled]="!expenseForm.valid" class="btn btn-danger" type="submit">Click</button>
+  </div>
+</form>

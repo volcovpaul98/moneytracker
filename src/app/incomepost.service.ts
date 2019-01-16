@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Income } from 'src/classes/income';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { isObject } from 'util';
 
 
 @Injectable({
@@ -24,5 +26,20 @@ export class IncomepostService {
   saveIncome(income: Income): Observable<Response> {
     return this.http.post(this.incomePostUrl, income, { headers: this.headers });
   }
+  getIncomeById(id:string): Observable<Income>{
+    var mapToIncome = map ((res:Response)=>{
+      return res.json();
+    })
+    return mapToIncome(this.http.get(this.incomeBuildUrl(id), {headers:this.headers}));
+  }
+  getAll(): Observable<Income[]> {
+    var mapToIncome = map((res: Response) => {
+      return res.json();
+    });
 
+    return mapToIncome(this.http.get(this.incomePostUrl, { headers: this.headers }));
+  }
+   incomeBuildUrl (id:string):string {
+    return this.incomePostUrl + " /" + id;
+  }
 }

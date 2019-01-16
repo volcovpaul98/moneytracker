@@ -11,6 +11,7 @@ import { HttpModule } from '@angular/http';
 import { Edit2Component } from './expense/edit2/edit2.component';
 import { Form2Component } from './expense/form2/form2.component';
 import { New2Component } from './expense/new2/new2.component';
+import { IncomeListComponent } from './income-list/income-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { New2Component } from './expense/new2/new2.component';
     EditComponent,
     Edit2Component,
     Form2Component,
-    New2Component
+    New2Component,
+    IncomeListComponent
 
   ],
   imports: [

@@ -9,16 +9,15 @@ import { ExpensenewService } from 'src/app/expensenew.service';
 })
 export class New2Component implements OnInit {
 
-  expense: Expense;
+  expense: Expense = new Expense();
   constructor(private expenseSerivce: ExpensenewService) { }
 
   ngOnInit() {
   }
-  submit(expense: Expense) {
-    this.expenseSerivce.saveExpense(expense).subscribe(x => {
-      this.expense = new Expense();
-    })
-   
-  }
 
+  onExpenseSubmit(expense: Expense) {
+    this.expenseSerivce.saveExpense(expense).subscribe(x => {
+      console.log(expense);
+    })
+  }
 }

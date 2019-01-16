@@ -12,12 +12,12 @@ import { ExpensenewService } from 'src/app/expensenew.service';
 })
 export class Form2Component implements OnInit {
   @Input()
-  expense: Expense = new Expense();
+  expense: Expense;
+
   @Output()
-  submit: EventEmitter<Expense> = new EventEmitter();
+  onExpenseSubmit: EventEmitter<Expense> = new EventEmitter();
 
   expenseForm: FormGroup;
-  expenseservice: ExpenseService;
   expenseNewService: ExpensenewService;
   expenseSourceList: ExpenseSource[] = [];
   public myDatePickerOptions: IMyDpOptions = {
@@ -26,25 +26,17 @@ export class Form2Component implements OnInit {
   public model: any = { date: { year: 2109, month: 1, day: 9 } };
 
 
-  constructor(fb: FormBuilder, expenseservice: ExpenseService) {
-    this.expenseservice = expenseservice;
-
-
-    this.expenseForm = fb.group({
-      description: [this.expense.description],
-      amount: [this.expense.amount],
-      category: [this.expense.category],
-      myDate: [{ date: { year: 2019, month: 1, day: 9 } },]
-    })
+  constructor(private fb: FormBuilder, private expenseservice: ExpenseService) {
+  
   }
 
 
   onSubmit() {
     this.expense = this.expenseForm.value;
-    this.submit.emit(this.expense);
+    this.onExpenseSubmit.emit(this.expense);
     console.log(this.expense);
-
   }
+  
   getExpense() {
     this.expenseservice.getExpenseSources().subscribe(response => {
       this.expenseSourceList = response;
@@ -54,12 +46,13 @@ export class Form2Component implements OnInit {
   ngOnInit() {
     this.getExpense();
 
+    this.expenseForm = this.fb.group({
+      description: [this.expense.description],
+      amount: [this.expense.amount],
+      category: [this.expense.category],
+      myDate: [{ date: { year: 2019, month: 1, day: 9 } },]
+    })
   }
-  saveExpense(expense: Expense) {
-    this.expenseNewService.saveExpense(expense).subscribe(x => {
-      console.log(expense);
-      this.getExpense();
-    });
-  }
+
 
 }

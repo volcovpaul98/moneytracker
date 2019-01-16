@@ -11,12 +11,12 @@ import { IncomepostService } from 'src/app/incomepost.service';
 })
 export class FormComponent implements OnInit {
   @Input()
-  income: Income = new Income();
+  income: Income;
+
   @Output()
-  submit: EventEmitter<Income> = new EventEmitter();
+  onIncomeSubmit: EventEmitter<Income> = new EventEmitter();
 
   incomeForm: FormGroup;
-  incomeservice: IncomeService;
   incomePostService: IncomepostService;
   incomeSourcesList: IncomeSource[] = [];
   public myDatePickerOptions: IMyDpOptions = {
@@ -25,22 +25,14 @@ export class FormComponent implements OnInit {
   public model: any = { date: { year: 2109, month: 1, day: 9 } };
 
 
-  constructor(fb: FormBuilder, incomeservice: IncomeService) {
-    this.incomeservice = incomeservice;
-
-
-    this.incomeForm = fb.group({
-      description: [this.income.description],
-      amount: [this.income.amount],
-      category: [this.income.category],
-      myDate: [{ date: { year: 2019, month: 1, day: 9 } },]
-    })
+  constructor(private fb: FormBuilder, private incomeservice: IncomeService) {
+   
   }
 
 
   onSubmit() {
     this.income = this.incomeForm.value;
-    this.submit.emit(this.income);
+    this.onIncomeSubmit.emit(this.income);
     console.log(this.income);
 
   }
@@ -53,12 +45,12 @@ export class FormComponent implements OnInit {
   ngOnInit() {
     this.getIncomes();
 
-  }
-  saveIncome(income: Income) {
-    this.incomePostService.saveIncome(income).subscribe(x => {
-      console.log(income);
-      this.getIncomes();
-    });
-  }
+    this.incomeForm =this.fb.group({
+      description: [this.income.description],
+      amount: [this.income.amount],
+      category: [this.income.category],
+      myDate: [{ date: { year: 2019, month: 1, day: 9 } },]
+    })
 
+  }
 }

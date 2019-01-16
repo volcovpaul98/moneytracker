@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
-import { ExpenseSource } from 'src/classes/expense';
+import { ExpenseSource, Expense } from 'src/classes/expense';
 import { map } from 'rxjs/operators';
 import { Form2Component } from './expense/form2/form2.component';
 
@@ -9,6 +9,7 @@ import { Form2Component } from './expense/form2/form2.component';
   providedIn: 'root'
 })
 export class ExpenseService {
+
 
   http: Http;
 
@@ -29,4 +30,5 @@ export class ExpenseService {
     })
     return mapOfIncome(this.http.get(this.expenseUrl, { headers: this.headers }));
   }
+ 
 }

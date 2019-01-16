@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-edit2',
   templateUrl: './edit2.component.html',
@@ -7,9 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Edit2Component implements OnInit {
 
-  constructor() { }
-
+  constructor( ) { }
+  
   ngOnInit() {
   }
-
 }

@@ -8,16 +8,14 @@ import { IncomepostService } from 'src/app/incomepost.service';
   styleUrls: ['./new.component.css']
 })
 export class NewComponent implements OnInit {
-  income: Income;
+  income: Income = new Income();
   constructor(private incomeService: IncomepostService) { }
 
   ngOnInit() {
   }
-  submit(income: Income) {
+  onIncomeSubmit(income: Income) {
     this.incomeService.saveIncome(income).subscribe(x => {
-      this.income = new Income();
+      console.log(income);
     })
-   
   }
-
 }

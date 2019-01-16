@@ -15,12 +15,13 @@ export class ExpensenewService {
       "cache-control": "no-cache"
     };
   
-    expenseNewUrl: string = "https://moneytracker-6be9.restdb.io/rest/expense ";
+    expenseNewUrl: string = "https://moneytracker-6be9.restdb.io/rest/expense";
   
     constructor(http: Http) {
       this.http = http;
     }
     saveExpense(expense: Expense): Observable<Response> {
+      console.log(expense);
       return this.http.post(this.expenseNewUrl, expense, { headers: this.headers });
     }
   

@@ -26,12 +26,7 @@ export class IncomepostService {
   saveIncome(income: Income): Observable<Response> {
     return this.http.post(this.incomePostUrl, income, { headers: this.headers });
   }
-  getIncomeById(id:string): Observable<Income>{
-    var mapToIncome = map ((res:Response)=>{
-      return res.json();
-    })
-    return mapToIncome(this.http.get(this.incomeBuildUrl(id), {headers:this.headers}));
-  }
+
   getAll(): Observable<Income[]> {
     var mapToIncome = map((res: Response) => {
       return res.json();
@@ -39,7 +34,13 @@ export class IncomepostService {
 
     return mapToIncome(this.http.get(this.incomePostUrl, { headers: this.headers }));
   }
-   incomeBuildUrl (id:string):string {
-    return this.incomePostUrl + " /" + id;
+  getIncomeById(id: string): Observable<Income> {
+    var mapToIncome = map((res: Response) => {
+      return res.json();
+    })
+    return mapToIncome(this.http.get(this.incomePostUrl + '/' + id, { headers: this.headers }));
+  }
+  editIncomePost(id: string, income: Income): Observable<Response> {
+    return this.http.put(this.incomePostUrl + '/' +id, income, { headers: this.headers });
   }
 }

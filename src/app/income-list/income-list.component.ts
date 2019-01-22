@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Expense } from 'src/classes/expense';
 import { IncomepostService } from '../incomepost.service';
+import { Income } from 'src/classes/income';
 
 @Component({
   selector: 'app-income-list',
@@ -8,16 +8,16 @@ import { IncomepostService } from '../incomepost.service';
   styleUrls: ['./income-list.component.css']
 })
 export class IncomeListComponent implements OnInit {
-  expenseList: Expense[];
+  incomeList: Income[];
 
-  constructor(private incomepostservice:IncomepostService) { }
+  constructor(private incomepostservice: IncomepostService) { }
 
   ngOnInit() {
     this.getIncomeList();
   }
-  getIncomeList() {
-    this.incomepostservice.getAll().subscribe(res =>{
-      this.expenseList=res;
+  private getIncomeList() {
+    this.incomepostservice.getAll().subscribe(res => {
+      this.incomeList = res;
     })
   }
 }

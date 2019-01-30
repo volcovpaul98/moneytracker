@@ -1,1 +1,3 @@
-<app-form [income]="income" (onIncomeSubmit)="editIncome($event)"></app-form>
+<div *ngIf="income">
+    <app-form [income]="income" (onIncomeSubmit)="update($event)"></app-form>
+</div>

@@ -14,8 +14,10 @@
         </tr>
 
       </table>
-      <button (click)="delete(expense._id)" class="formControl buttonDelete">Delete</button>
-      <button [routerLink]="['/edit-expense', expense._id]" class="formControl buttonEdit">Edit</button>
+      <div class="spacearounds">
+        <button (click)="delete(expense._id)" class="formControl buttonDelete">Delete</button>
+        <button [routerLink]="['/edit-expense', expense._id]" class="formControl buttonEdit">Edit</button>
+      </div>
     </div>
   </div>
 </div>

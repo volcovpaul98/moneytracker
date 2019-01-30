@@ -2,53 +2,70 @@ td, tr, table {
     
     border: 1.5px solid #808080;
     height: 26px;
-    color: #e8e8e8;
-}
+    color: #ffffff;
+    background: #0000001a;
+      }
+      th, td {
+        padding: 9px;
+        text-align: left;
+      }
+      table {
+        width: 130%;
+      }
+      
+      
 .buttonDelete{
-
-color: #dadada !important;
-border: 1px solid #8a02d8 !important;
-background: #8a02d8 !important;
-border-radius: 5px !important;
-font-size: 15px !important;
-cursor: pointer;
-margin-top:2%;
-margin-bottom: 2%;
+    
+    color: #dadada !important;
+    border: 1px solid #8a02d8 !important;
+    background: #8a02d8 !important;
+    border-radius: 5px !important;
+    font-size: 15px !important;
+    cursor: pointer;
+    margin-top:2%;
+    margin-bottom: 2%;
+    padding: 3px 14px;
+}
+.spacearounds  {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 25%;
 }
 .buttonEdit {
-margin-left:70%;
+
 color: #dadada !important;
-border: 1px solid #8a02d8 !important;
-background: #8a02d8 !important;
-border-radius: 5px !important;
-font-size: 15px !important;
-cursor: pointer;
-margin-top:2%;
-margin-bottom: 2%;
+    border: 1px solid #8a02d8 !important;
+    background: #8a02d8 !important;
+    border-radius: 5px !important;
+    font-size: 15px !important;
+    cursor: pointer;
+    margin-top:2%;
+    margin-bottom: 2%;
+    padding: 3px 25px;
 }
-.buttonDelete:hover {
-color: #fff !important;
-background:#0000ff !important;
-border:1px solid #0000ff !important;
-transition-duration: 0.4s;
-
-}
-.buttonDelete:active,
-.buttonDelete:focus {
-color: #8b0000 !important;
-background:#c71f1f !important;
-border:1px solid #c71f1f !important;
-}
-.buttonEdit:hover {
-color: #fff !important;
-background:#0000ff !important;
-border:1px solid #0000ff !important;
-transition-duration: 0.4s;
-
-}
-.buttonEdit:active,
-.buttonEdit:focus {
-color: #8b0000 !important;
-background:#c71f1f !important;
-border:1px solid #c71f1f !important;
-}
+  .buttonDelete:hover {
+      color: #fff !important;
+      background:#0000ff !important;
+      border:1px solid #0000ff !important;
+      transition-duration: 0.4s;
+    
+    }
+    .buttonDelete:active,
+    .buttonDelete:focus {
+      color: #8b0000 !important;
+      background:#c71f1f !important;
+      border:1px solid #c71f1f !important;
+    }
+    .buttonEdit:hover {
+      color: #fff !important;
+      background:#0000ff !important;
+      border:1px solid #0000ff !important;
+      transition-duration: 0.4s;
+    
+    }
+    .buttonEdit:active,
+    .buttonEdit:focus {
+      color: #8b0000 !important;
+      background:#c71f1f !important;
+      border:1px solid #c71f1f !important;
+    }

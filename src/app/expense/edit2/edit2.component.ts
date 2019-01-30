@@ -26,7 +26,7 @@ export class Edit2Component implements OnInit {
   private loadExpense() {
     
     this.expenseService.getById(this.id).subscribe(x => {
-  
+      console.log(x);
       this.expense = x;
     });
   }

@@ -14,8 +14,11 @@
         </tr>
 
       </table>
-      <button (click)="delete(income._id)" class="formControl buttonDelete">Delete</button>
-      <button [routerLink]="['/edit-income', income._id]" class="formControl buttonEdit">Edit</button>
+      <div class="spacearounds">
+        <button (click)="delete(income._id)" class="formControl buttonDelete">Delete</button>
+
+        <button [routerLink]="['/edit-income', income._id]" class="formControl buttonEdit">Edit</button>
+      </div>
     </div>
   </div>
 </div>

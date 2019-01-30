@@ -14,6 +14,10 @@ import { New2Component } from './expense/new2/new2.component';
 import { IncomeListComponent } from './income-list/income-list.component';
 import { ExpenseListComponent } from './expense-list/expense-list.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { IncomechartComponent } from './charts/incomechart/incomechart.component';
+import { ChartsModule } from 'ng2-charts';
+import { ExpensechartComponent } from './charts/expensechart/expensechart.component';
+import { ChartComponent } from './charts/chart/chart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +28,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     Form2Component,
     New2Component,
     IncomeListComponent,
-    ExpenseListComponent
+    ExpenseListComponent,
+    IncomechartComponent,
+    ExpensechartComponent,
+    ChartComponent
 
   ],
   imports: [
@@ -34,7 +41,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

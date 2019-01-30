@@ -1,1 +1,3 @@
-<app-form2 [expense]="expense" (submit)="update($event)"></app-form2>
+<div *ngIf="expense">
+    <app-form2 [expense]="expense" (onExpenseSubmit)="update($event)"></app-form2>
+</div>

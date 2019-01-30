@@ -1,0 +1,5 @@
+<div *ngIf="doughnutChartData" style="display: block ">
+  <canvas  class= "ras" baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType"
+    (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+  </canvas>
+</div>

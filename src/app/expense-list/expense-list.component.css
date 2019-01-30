@@ -1,9 +1,19 @@
 td, tr, table {
     
-        border: 1.5px solid #808080;
-        height: 26px;
-        color:#e8e8e8;
+  border: 1.5px solid #808080;
+  height: 26px;
+  color: #ffffff;
+  background: #0000001a;
     }
+    th, td {
+      padding: 9px;
+      text-align: left;
+    }
+    table {
+      width: 130%;
+    }
+    
+   
 .buttonDelete{
     
     color: #dadada !important;
@@ -14,9 +24,15 @@ td, tr, table {
     cursor: pointer;
     margin-top:2%;
     margin-bottom: 2%;
+    padding: 3px 14px;
+}
+.spacearounds  {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 25%;
 }
 .buttonEdit {
-margin-left:70%;
+
 color: #dadada !important;
     border: 1px solid #8a02d8 !important;
     background: #8a02d8 !important;
@@ -25,6 +41,7 @@ color: #dadada !important;
     cursor: pointer;
     margin-top:2%;
     margin-bottom: 2%;
+    padding: 3px 25px;
 }
 .buttonDelete:hover {
     color: #fff !important;

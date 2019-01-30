@@ -25,3 +25,4 @@ export class IncomeListComponent implements OnInit {
       this.getIncomeList();
     })
 }
+}

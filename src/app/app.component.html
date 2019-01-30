@@ -1,4 +1,31 @@
-<a routerLink="/income-new" class="buttonRout">Income</a>
-<a routerLink="/expense-new"class="buttonRout">Expense</a>
-<a routerLink="/income-list"class="buttonRout">IncomeList</a>
-<router-outlet></router-outlet>
+<div class="image">
+  <nav class="circular-menu sad">
+    <input class="circular-menu__button" id="circular-menu" type="checkbox" href="javascript: void 0" checked="checked" />
+    <label class="circular-menu__icon" for="circular-menu">
+      <fa-icon [icon]="faHandHoldingUsd"></fa-icon>
+    </label>
+    <a class="circular-menu__item" routerLink="/charts">
+      <fa-icon [icon]="faChartPie"></fa-icon>
+      <div class="textCircle">Charts</div>
+    </a>
+    <a class="circular-menu__item" routerLink="/expense-list">
+      <fa-icon [icon]="faFileInvoiceDollar"></fa-icon>
+      <div class="textCircle">Expense</div>
+    </a>
+    <a class="circular-menu__item" routerLink="/expense-new">
+      <div class="textCircleAdd">Add</div>
+      <fa-icon [icon]="faChartLine"></fa-icon>
+      <div class="textCircle">Expense</div>
+    </a>
+    <a class="circular-menu__item" routerLink="/income-new">
+      <div class="textCircleAdd">Add</div>
+      <fa-icon [icon]="faChartLine"></fa-icon>
+      <div class="textCircle">Income</div>
+    </a>
+    <a class="circular-menu__item" routerLink="/income-list">
+      <fa-icon [icon]="faFileInvoiceDollar"></fa-icon>
+      <div class="textCircle">Income</div>
+    </a>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

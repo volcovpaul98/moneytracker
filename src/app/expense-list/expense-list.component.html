@@ -1,0 +1,21 @@
+<div class="formGroup" style="position: absolute;top: 22%;right: 11%;">
+  <div *ngFor="let expense of expenseList">
+    <div class="list" *ngIf="expense.description">
+      <table>
+        <tr>
+          <th>Id-Expense</th>
+          <th>Description</th>
+          <th>Amount</th>
+        </tr>
+        <tr>
+          <td>{{expense._id}}</td>
+          <td>{{expense.description}}</td>
+          <td>{{expense.amount}}</td>
+        </tr>
+
+      </table>
+      <button (click)="delete(expense._id)" class="formControl buttonDelete">Delete</button>
+      <button [routerLink]="['/edit-expense', expense._id]" class="formControl buttonEdit">Edit</button>
+    </div>
+  </div>
+</div>

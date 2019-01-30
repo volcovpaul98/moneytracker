@@ -12,9 +12,11 @@ export class EditComponent implements OnInit {
   @Output()
   EditIncomeOutput: EventEmitter<Income> = new EventEmitter();
   income: Income;
+  incomeService : IncomepostService ;
   id: string;
 
-  constructor(private incomePostService: IncomepostService, private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor( incomeService: IncomepostService, private activatedRoute: ActivatedRoute, private router: Router) {
+    this.incomeService = incomeService;
     this.id = this.activatedRoute.snapshot.paramMap.get("id");
     console.log(this.id);
     this.loadIncome();
@@ -24,14 +26,14 @@ export class EditComponent implements OnInit {
    
   }
   private loadIncome() {
-    this.incomePostService.getIncomeById(this.id).subscribe(x => {
+    this.incomeService.getIncomeById(this.id).subscribe(x => {
       console.log(x);
       this.income = x;
     })
   }
   editIncome(income: Income): void {
     this.EditIncomeOutput.emit(this.income);
-    this.incomePostService.editIncomePost(this.id, income).subscribe(x => {
+    this.incomeService.editIncomePost(this.id, income).subscribe(x => {
       console.log(x)
       this.loadIncome();
       this.router.navigate(['/edit-income']);

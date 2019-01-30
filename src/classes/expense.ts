@@ -1,8 +1,9 @@
 export class ExpenseSource {
-    _id:string;
+    
     name:string;
 }
 export class Expense {
+    _id:string;
     description:string;
     amount:number;
     myDate:Date;

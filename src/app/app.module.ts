@@ -12,6 +12,8 @@ import { Edit2Component } from './expense/edit2/edit2.component';
 import { Form2Component } from './expense/form2/form2.component';
 import { New2Component } from './expense/new2/new2.component';
 import { IncomeListComponent } from './income-list/income-list.component';
+import { ExpenseListComponent } from './expense-list/expense-list.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,8 @@ import { IncomeListComponent } from './income-list/income-list.component';
     Edit2Component,
     Form2Component,
     New2Component,
-    IncomeListComponent
+    IncomeListComponent,
+    ExpenseListComponent
 
   ],
   imports: [
@@ -30,7 +33,8 @@ import { IncomeListComponent } from './income-list/income-list.component';
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

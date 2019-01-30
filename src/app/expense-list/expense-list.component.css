@@ -1,0 +1,54 @@
+td, tr, table {
+    
+        border: 1.5px solid #808080;
+        height: 26px;
+        color: #192867;
+    }
+.buttonDelete{
+    
+    color: #dadada !important;
+    border: 1px solid #8a02d8 !important;
+    background: #8a02d8 !important;
+    border-radius: 5px !important;
+    font-size: 15px !important;
+    cursor: pointer;
+    margin-top:2%;
+    margin-bottom: 2%;
+}
+.buttonEdit {
+margin-left:70%;
+color: #dadada !important;
+    border: 1px solid #8a02d8 !important;
+    background: #8a02d8 !important;
+    border-radius: 5px !important;
+    font-size: 15px !important;
+    cursor: pointer;
+    margin-top:2%;
+    margin-bottom: 2%;
+}
+.buttonDelete:hover {
+    color: #fff !important;
+    background:#0000ff !important;
+    border:1px solid #0000ff !important;
+    transition-duration: 0.4s;
+  
+  }
+  .buttonDelete:active,
+  .buttonDelete:focus {
+    color: #8b0000 !important;
+    background:#c71f1f !important;
+    border:1px solid #c71f1f !important;
+  }
+  .buttonEdit:hover {
+    color: #fff !important;
+    background:#0000ff !important;
+    border:1px solid #0000ff !important;
+    transition-duration: 0.4s;
+  
+  }
+  .buttonEdit:active,
+  .buttonEdit:focus {
+    color: #8b0000 !important;
+    background:#c71f1f !important;
+    border:1px solid #c71f1f !important;
+  }

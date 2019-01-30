@@ -1,4 +1,4 @@
-<div class="formGroup">
+<div class="formGroup " style="position: absolute;top: 22%;right: 11%;">
   <div *ngFor="let income of incomeList">
     <div class="list" *ngIf="income.description">
       <table>
@@ -14,7 +14,8 @@
         </tr>
 
       </table>
-      <button [routerLink]="['/edit-income', income._id]" class="formControl">Edit</button>
+      <button (click)="delete(income._id)" class="formControl buttonDelete">Delete</button>
+      <button [routerLink]="['/edit-income', income._id]" class="formControl buttonEdit">Edit</button>
     </div>
   </div>
 </div>

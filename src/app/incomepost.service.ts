@@ -41,6 +41,12 @@ export class IncomepostService {
     return mapToIncome(this.http.get(this.incomePostUrl + '/' + id, { headers: this.headers }));
   }
   editIncomePost(id: string, income: Income): Observable<Response> {
-    return this.http.put(this.incomePostUrl + '/' +id, income, { headers: this.headers });
+    return this.http.put(this.buildUrl(id), income, { headers: this.headers });
+  }
+  buildUrl(id:string):string{
+    return this.incomePostUrl + "/" +id;
+  }
+  deleteIncome(id: string): Observable<Response> {
+    return this.http.delete(this.incomePostUrl + '/' + id, { headers: this.headers });
   }
 }

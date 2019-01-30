@@ -20,4 +20,8 @@ export class IncomeListComponent implements OnInit {
       this.incomeList = res;
     })
   }
+  delete(id:string) {
+    this.incomepostservice.deleteIncome(id).subscribe(x => {
+      this.getIncomeList();
+    })
 }

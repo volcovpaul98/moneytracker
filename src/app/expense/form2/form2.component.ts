@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ExpenseSource, Expense } from 'src/classes/expense';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ExpenseService } from 'src/app/expense.service';
 import { IMyDpOptions } from 'mydatepicker';
 import { ExpensenewService } from 'src/app/expensenew.service';
@@ -47,9 +47,9 @@ export class Form2Component implements OnInit {
     this.getExpense();
 
     this.expenseForm = this.fb.group({
-      description: [this.expense.description],
-      amount: [this.expense.amount],
-      category: [this.expense.category],
+      description: [this.expense.description, Validators.required],
+      amount: [this.expense.amount, Validators.required],
+      category: [this.expense.category, Validators.required],
       myDate: [{ date: { year: 2019, month: 1, day: 9 } },]
     })
   }
